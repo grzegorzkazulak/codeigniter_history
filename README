@@ -1,0 +1,34 @@
+CodeIgniter History Library
+=============================================================
+
+Actions history management library for CodeIgniter. 
+
+Instead of using built-in hooks mechanism available in CodeIgniter like other similar libraries
+I have taken different approach which allows developer to reinitialize the history 
+couple of times during on workflow which gives much more flexibility. The footprint is really small
+so it doesn't really affect the overall performance of your application.
+
+You can load it by usual:
+
+$this->library->load('history');
+
+or via autoloader available in CI which in most cases you all will prefer.
+
+Available metohds:
+
+# Clear the history
+$this->history->clear();
+
+# Pushes action uri to the stack
+$this->history->pushItem($actionURI);
+
+# Retreives whole action stack
+$this->history->stack();
+
+# Returns previous URI (can be called couple of times (ie. to get the uri executed 2 actions before ))
+$this->history->previous();
+
+
+
+# INSTALLATION AND USAGE
+Just put Library.php file under application/libraries and load in whenever it's needed.
